@@ -16,4 +16,5 @@ Please follow below steps to project setup.
 
 6. Now code is ready to run. You can use `yarn ios` or `npm run ios` to run app in iPhone and `yarn android` or `npm run android` to run app in Android devices.
 
-<!-- <img src="./screenshots/dragon_list.png" width="200"> -->
+<img src="./screenshots/login.png" width="400">
+<img src="./screenshots/movies.png" width="400">

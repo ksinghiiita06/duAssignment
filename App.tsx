@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
-import {StatusBar, StyleSheet, useColorScheme} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+// import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from './src/redux';
@@ -12,12 +12,7 @@ import {PRIMARY_COLOR} from './src/common/colors';
 import {configureLocale} from './src/localize';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-  const beforeLift = useCallback(async () => {
+  const beforeLift = useCallback(() => {
     configureLocale();
   }, []);
 
@@ -26,7 +21,7 @@ function App(): React.JSX.Element {
       <PaperProvider>
         <MenuProvider>
           <PersistGate persistor={persistor} onBeforeLift={beforeLift}>
-            <SafeAreaView style={[backgroundStyle, styles.safeareaStyle]}>
+            <SafeAreaView style={[styles.safeareaStyle]}>
               <StatusBar backgroundColor={PRIMARY_COLOR} />
               <RootNavigation />
             </SafeAreaView>
